@@ -7,7 +7,6 @@ body
 	background-size:cover;
 	font-family: sans-serif; 
 }
-
 .loginBox
 {
 	position:absolute;
@@ -21,9 +20,6 @@ body
 	background:rgba(0,0,0,0.5) ;
 	
 }
-
-
-
 h2
 {
 	margin:0;

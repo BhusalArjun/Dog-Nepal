@@ -1,0 +1,16 @@
+/* FOOTER */
+footer{
+    background: url("imgs/bg.jpg");
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height:50%;
+    width: 100%;
+    padding: 35px 30px;
+    font-size: 20px;
+}
+footer p{
+  color: var(--red);
+}
+
