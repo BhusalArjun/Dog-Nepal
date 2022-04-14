@@ -29,7 +29,10 @@
         <thead>
         <tr>
                     <th>S.N</th>
-                    <th>Dog Image</th>
+                    <th>Dog Image1</th>
+                    <th>Dog Image2</th>
+                    <th>Dog Image3</th>
+                    <th>Dog Image4</th>
                     <th>Dog Name</th>
                     <th>Dog Breed</th>
                     <th>Dog Age</th>
@@ -61,9 +64,12 @@
    ?>
     <tbody>
     <tr>
-        <td><?php echo $i;?></td>
-        <!-- <td><?php echo $row ['Id'];?></td> -->
-        <td><?php echo $row ['dog_image']?></td>
+        <!-- <td><?php echo $i;?></td> -->
+       <td><?php echo $row['id'];?></td>
+        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row['dog_image1']?>"></td>
+        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row['dog_image2']?>"></td>
+        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row['dog_image3']?>"></td>
+        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row ['dog_image4']?>"></td>
         <td><?php echo $row ['dog_name']?></td>
         <td><?php echo $row ['dog_breed']?></td>
         <td><?php echo $row ['dog_age']?></td>
@@ -78,8 +84,11 @@
         <td>
             
             
-            <button><a href="mailto:">Approve</a></button>
-            <a href="#" onclick="del(<?php echo $i;?>)">Reject</a>
+            <button ><a href="mailto:" style="background-color:#F26419; color:white;">Approve</a></button>
+            <br><br> <hr> <br>
+            <button><a style="background-color:#F26419; color:white;" href="../delete.php?id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this')">Delete</a></button><br><br> <hr> <br>
+            <button style="background-color:#F26419; color:white;" > Contact</button>
+
         </td>
     </tr>
         <?php
@@ -90,7 +99,7 @@
     </tbody>
     </table>
   
-    <script>
+    <!-- <script>
 function del(id)
 	{
 		if(confirm("You want to delete ?"))
@@ -99,6 +108,6 @@ function del(id)
 		}
 	}
 </script>
-   
+    -->
 </body>
 </html>

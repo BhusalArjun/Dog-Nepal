@@ -44,7 +44,7 @@
                     <h3>Click here to donate and adopt the dog</h3>
                     <p>Saving one dog will not change the world, but surely for that one dog, the world will change forever.</p>
                     <div class="card__link ">
-                        <a href="Adoption\adopt.php">Adopt Now</a>
+                        <a href="Adoption\adopt.php">Adopt OR Donate</a>
                     </div>
                 </div>
                 <div class="help__card ">
@@ -56,7 +56,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <?php require 'footer\footer.php' ?>
+      
   </body>
 </html>

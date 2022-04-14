@@ -48,6 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			<span style="color:white;"><?php echo $msg;?></span>
 			
 		</form>
+		
 	</div>
 </html>
 

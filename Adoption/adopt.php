@@ -63,20 +63,7 @@
   .content-table tbody tr:last-of-type{
       border-bottom: 2px solid var(--red); 
   }
-  footer{
-      background: url("../images/bg.jpg");
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      height:120%;
-      width: 100%;
-      font-size: 20px;
-  }
-  footer p{
-    color: var(--red);
-  }
-      </style>
+  </style>
   </head>
   <body>
     <section id="landing__area">
@@ -110,7 +97,7 @@
             </div>
         </section>
     <div class="title">
-        <h1>Dog Donor Information</h1>
+        <h1>Dog Information</h1>
     </div>
 
     <div class="main">
@@ -118,7 +105,10 @@
              <thead>
                 <tr>
                     <th>S.N</th>
-                    <th>Dog Image</th>
+                    <th>Dog Image1</th>
+                    <th>Dog Image2</th>
+                    <th>Dog Image3</th>
+                    <th>Dog Image4</th>
                     <th>Dog Name</th>
                     <th>Dog Breed</th>
                     <th>Dog Age</th>
@@ -126,9 +116,9 @@
                     <th>Dog Color</th>
                     <th>Dog Size</th>
                     <th>Location</th>
-                    <th>Owner Name</th>
+                    <!-- <th>Owner Name</th>
                     <th>Owner Email</th>
-                    <th>Owner Number</th>
+                    <th>Owner Number</th> -->
                     <th>Desciption</th>
                     <th>Action</th>
                 </tr>
@@ -149,8 +139,11 @@
     <tbody>
     <tr>
         <td><?php echo $i;?></td>
-        <!-- <td><?php echo $row ['Id'];?></td> -->
-        <td><?php echo $row ['dog_image']?></td>
+        <!-- <td><?php $id = $row['id'];?></td> -->
+        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row['dog_image1']?>"></td>
+        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row['dog_image2']?>"></td>
+        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row['dog_image3']?>"></td>
+        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row ['dog_image4']?>"></td>
         <td><?php echo $row ['dog_name']?></td>
         <td><?php echo $row ['dog_breed']?></td>
         <td><?php echo $row ['dog_age']?></td>
@@ -158,12 +151,12 @@
         <td><?php echo $row ['dog_color']?></td>
         <td><?php echo $row ['dog_size']?></td>
         <td><?php echo $row ['location']?></td>
-        <td><?php echo $row ['owner_name']?></td>
+        <!-- <td><?php echo $row ['owner_name']?></td>
         <td><?php echo $row ['owner_email']?></td>
-        <td><?php echo $row ['owner-number']?></td>
+        <td><?php echo $row ['owner-number']?></td> -->
         <td><?php echo $row ['describ']?></td>
         <td>
-            <button><a href="mailto:">Get</a></button>
+            <button><a href="../Demo.php?id=<?php echo $id; ?>" style="background-color:#F26419; color:white;">Adopt</a></button>
            
         </td>
     </tr>
@@ -174,9 +167,6 @@
         ?>
     </tbody>
     </table>
-  
-        <!-- <footer>
-                <p>2022 &copyDogsNepal</p>
-        </footer> --> 
+
   </body>
 </html>

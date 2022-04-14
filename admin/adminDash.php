@@ -19,7 +19,6 @@ session_start();
             <ul>
                 <li><a class="active" href="../admin/adminDash.php">Home</a></li>
                 <li><a href="../admin/adoptDash.php">Donate Dashboard</a></li>
-                <li><a href="#">Adopt Dashboard</a></li>
                 <li><a href="#">Lost Dog</a></li>
                 <li><a href="../adminentry/login.php">Sign out</a></li>
             </ul>
@@ -33,5 +32,6 @@ session_start();
                 Welcome to Admin Dashboard
             </p>
         </div>
+        <?php include '..\footer\footer.php'?>
     </body>
 </html>
