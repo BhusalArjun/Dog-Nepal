@@ -15,10 +15,10 @@
       </label>
       <label class="logo">Dogs Nepal</label>
       <ul>
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a class="active" href="index.php">Home</a></li>
+        <li><a href="Adoption/adopt.php">Adopt Dog</a></li>
+        <li><a href="lostdog/lostdog.php">Lost Dog</a></li>
+        <li><a href="admin/aboutdog.php">About</a></li>
         <li><a href="adminentry\login.php">Admin-login</a></li>
       </ul>
     </nav>
@@ -56,6 +56,6 @@
                     </div>
                 </div>
             </div>
-      
+            <?php include 'footer/footer.php'?>
   </body>
 </html>

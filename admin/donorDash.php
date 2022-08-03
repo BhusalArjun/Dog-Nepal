@@ -14,10 +14,12 @@
             <label class="logo">Dogs Nepal</label>
             <ul>
                 <li><a  href="../admin/adminDash.php">Home</a></li>
-                <li><a class="active" href="admin/adoptDash.php">Donate Dashboard</a></li>
-                <li><a href="#">Adopt</a></li>
-                <li><a href="#">Lost Dog</a></li>
-                <li><a href="../adminentry/login.php">Sign out</a></li>
+                <li><a class="active" href="../admin/donorDash.php">Donate </a></li>
+                <li><a href="../admin/adoptDash.php">Adopt </a></li>
+                <li><a href="../gmailContact/index.php">Gmail Conatct</a></li>
+                <li><a href="../admin/uploadlostdogDash.php">Lost Dog</a></li>
+                <li><a href="../admin/findlostdogdash.php">Dog Finder</a></li>
+                <li><a href="../adminentry/login.php">Sign Out</a></li>
             </ul>
         </nav>
     <div class="title">
@@ -29,21 +31,20 @@
         <thead>
         <tr>
                     <th>S.N</th>
+                    <th>I.D</th>
                     <th>Dog Image1</th>
                     <th>Dog Image2</th>
                     <th>Dog Image3</th>
-                    <th>Dog Image4</th>
                     <th>Dog Name</th>
                     <th>Dog Breed</th>
                     <th>Dog Age</th>
                     <th>Dog Gender</th>
-                    <th>Dog Color</th>
-                    <th>Dog Size</th>
                     <th>Location</th>
                     <th>Owner Name</th>
                     <th>Owner Email</th>
                     <th>Owner Number</th>
                     <th>Desciption</th>
+                    <th>Result</th>
                     <th>Action</th>
                 </tr>
         </thead>
@@ -51,7 +52,7 @@
 
     <?php
         include "../config.php";
-        $selectQuery = "SELECT * FROM lostdog";
+        $selectQuery = "SELECT * FROM adopt WHERE status = 'REQUEST' OR status = 'APPROVE'";
 
         $result = mysqli_query($conn, $selectQuery);  //
 
@@ -65,28 +66,27 @@
     <tbody>
     <tr>
         <td><?php echo $i;?></td>
-        <!-- <td><?php echo $row['id'];?></td> -->
-        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row['dog_image1']?>"></td>
-        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row['dog_image2']?>"></td>
-        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row['dog_image3']?>"></td>
-        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row ['dog_image4']?>"></td>
+       <td><?php echo $row['id'];?></td>
+        <td><img style="width:100%;height:auto;" src="../dogphotos/<?php echo $row['dog_image1']?>"></td>
+        <td><img style="width:100%;height:auto;" src="../dogphotos/<?php echo $row['dog_image2']?>"></td>
+        <td><img style="width:100%;height:auto;" src="../dogphotos/<?php echo $row['dog_image3']?>"></td>
         <td><?php echo $row ['dog_name']?></td>
         <td><?php echo $row ['dog_breed']?></td>
         <td><?php echo $row ['dog_age']?></td>
         <td><?php echo $row ['dog_gender']?></td>
-        <td><?php echo $row ['dog_color']?></td>
-        <td><?php echo $row ['dog_size']?></td>
         <td><?php echo $row ['location']?></td>
         <td><?php echo $row ['owner_name']?></td>
         <td><?php echo $row ['owner_email']?></td>
-        <td><?php echo $row ['owner-number']?></td>
+        <td><?php echo $row ['owner_number']?></td>
         <td><?php echo $row ['describ']?></td>
+        <td><?php echo $row ['status']?></td>
         <td>
             
             
-            <button ><a href="mailto:" style="background-color:#F26419; color:white;">Approve</a></button>
+            <button ><a href="../approvedonate.php?id=<?php echo $row['id'] ?>" style="background-color:#F26419; color:white;">Approve</a></button>
             <br><br> <hr> <br>
-            <button><a style="background-color:#F26419; color:white;" href="../delete.php?id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this')">Delete</a></button>
+            <button><a style="background-color:#F26419; color:white;" href="../deleteadopt.php?id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this')">Delete</a></button><br><br> 
+
 
         </td>
     </tr>
@@ -94,7 +94,8 @@
         $i++;
         }
     }
-        ?>
+        ?> 
+        
     </tbody>
     </table>
   
@@ -108,5 +109,6 @@ function del(id)
 	}
 </script>
     -->
+    <!-- <?php require '../footer/footer.php';?> -->
 </body>
 </html>

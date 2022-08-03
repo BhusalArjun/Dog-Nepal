@@ -1,6 +1,6 @@
 <?php
  
-$conn = mysqli_connect("localhost","root","","dloogin") or die("connection_failed");
+$conn = mysqli_connect("localhost","root","","dog") or die("connection_failed");
  
  //  include_once("\config.php");
 
@@ -26,26 +26,17 @@ if(isset($_POST['submit'])){
   
   
   move_uploaded_file($dog_image3_temp,"../../dogphotos/$dogimage3");
-  $dogimage4=$_FILES['dog_image4']['name'];
-  $dog_image4_temp=$_FILES['dog_image4']['tmp_name'];
-
-
-
-
-move_uploaded_file($dog_image4_temp,"../../dogphotos/$dogimage4");
     $dog_name=$_POST['dog_name'];
     $dog_breed=$_POST['dog_breed'];
     $dog_age=$_POST['dog_age'];
     $dog_gender=$_POST['dog_gender'];
-    $dog_color=$_POST['dog_color'];
-    $dog_size=$_POST['dog_size'];
     $describ=$_POST['describ'];
     $location=$_POST['location'];
     $owner_name=$_POST['owner_name'];
     $owner_email=$_POST['owner_email'];
     $owner_number=$_POST['owner_number'];
 
- $sqlQuery="INSERT INTO `adopt` (`dog_image1`, `dog_image2`, `dog_image3`, `dog_image4`, `dog_name`, `dog_breed`, `dog_age`, `dog_gender`, `dog_color`, `dog_size`, `describ`, `location`, `owner_name`, `owner_email`, `owner-number`)values('$dogimage1','$dogimage2','$dogimage3','$dogimage4','$dog_name','$dog_breed','$dog_age','$dog_gender','$dog_color','$dog_size','$describ','$location','$owner_name','$owner_email','$owner_number')";
+$sqlQuery="INSERT INTO `adopt`(`id`, `dog_image1`, `dog_image2`, `dog_image3`, `dog_name`, `dog_breed`, `dog_age`, `dog_gender`, `describ`, `location`, `owner_name`, `owner_email`, `owner_number`,`status`,`remarks`) VALUES ('','$dogimage1','$dogimage2','$dogimage3','$dog_name','$dog_breed','$dog_age','$dog_gender','$describ','$location','$owner_name','$owner_email','$owner_number','REQUEST','AVAILABLE')";
 
 if(mysqli_query($conn,$sqlQuery)){
     echo"<script>alert('Stored pet details')</script>";
@@ -68,13 +59,11 @@ body{
   display: flex;justify-content: center;align-items: center;padding: 10px;background: url(imgs/bg.jpg);
 }
 #maintable{width:1000px;height:auto;background:#fff;margin-left:160px;box-shadow:5px 5px 5px #400040;border:2px solid #400040;}
-
 #maintable h1{text-align:center;color:#fff;background:#F26419;border-radius:4px;border:2px solid #fff;}
 #maintable table{margin-left:200px;}
 #maintable table tr td{font-size:25px;padding:5px;font-weight:bold;}
 #maintable table tr td input{font-size:20px;padding:5px;width:300px;height:40px;border-radius:4px;border:2px solid #F26419;margin-left:50px;}
 #maintable table tr td textarea{font-size:20px;padding:5px;width:300px;height:90px;border-radius:4px;border:2px solid #F26419;margin-left:50px;}
-
 </style>
 </head>
 <body>
@@ -111,43 +100,28 @@ body{
   </tr>
   <tr>
   <td>Enter Dog Gender  :</td>
-  <td><input type="text" name="dog_gender" placeholder="Enter gender of dog"></td>
-  </tr>
-  <tr>
-  <td>Enter Dog Color  :</td>
-  <td><input type="text" name="dog_color" placeholder="Enter color of dog"></td>
-  </tr>
-  <tr>
-  <td>Enter Dog Size :</td>
-  <td><input type="text" name="dog_size" placeholder="Enter size of dog" required></td>
+  <td><input type="text" name="dog_gender" placeholder="Enter gender of dog" required></td>
   </tr>
   <tr>
   <td>Other Information  :</td>
-  <td><textarea rows = "5" cols = "40" name = "describ" >
-            Other information like..
-      </textarea>
+  <td><textarea rows = "5" cols = "40" name = "describ" placeholder=" Other information like.." > </textarea>
   </td>
   </tr>
   <tr>
   <td>Enter Dog image One  :</td>
-  <td><input type="file" name="dog_image1"></td>
+  <td><input type="file" name="dog_image1" required></td>
   </tr>
   <tr>
   <td>Enter Dog image Two  :</td>
-  <td><input type="file" name="dog_image2"></td>
+  <td><input type="file" name="dog_image2" required></td>
   </tr>
   <tr>
   <td>Enter Dog image Three  :</td>
-  <td><input type="file" name="dog_image3"></td>
-  </tr>
-  <tr>
-  <td>Enter Dog image Four  :</td>
-  <td><input type="file" name="dog_image4"></td>
+  <td><input type="file" name="dog_image3" required></td>
   </tr>
   </table>
     <input type="submit" name="submit" value="Add Details" style="margin-top:20px;margin-bottom:20px;font-size:20px;margin-left:500px;text-align:center;padding:5px;border-radius:none;background:#F26419;color:#fff;">
 </div>
-
 </form>
 </body>
 </html>

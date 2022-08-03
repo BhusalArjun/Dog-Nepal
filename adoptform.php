@@ -1,20 +1,19 @@
 <?php
 $id = $_GET['id'];
+session_start();
 ?>
  <?php
-$conn = mysqli_connect("localhost","root","","dloogin") or die("connection_failed");
- 
+$conn = mysqli_connect("localhost","root","","dog") or die("connection_failed"); 
  //  include_once("\config.php");
-
 if(isset($_POST['submit'])){
-    // $id=$_POST['id'];
+  $_SESSION['id']=$id;
+    $id=$_POST['id'];
     $name=$_POST['name'];
     $email=$_POST['email'];
     $contactnumber=$_POST['contactnumber'];
     $location=$_POST['location'];
     $message=$_POST['message'];
- $sqlQuery="INSERT INTO `wanttoadopt` ( `name`, `email`, `contactnumber`, `location`, `message`)values('$name','$email','$contactnumber','$location','$message')";
-
+ $sqlQuery="INSERT INTO `wanttoadopt` ( `id`,`name`, `email`, `contactnumber`, `location`, `message`)values('$id','$name','$email','$contactnumber','$location','$message')";
 if(mysqli_query($conn,$sqlQuery)){
     echo"<script>alert('Stored pet details')</script>";
 }
@@ -23,8 +22,6 @@ if(mysqli_query($conn,$sqlQuery)){
     }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +44,7 @@ body{
 </style>
 </head>
 <body>
-<form method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" action="remarksadopt.php?id=<?php echo $id; ?>">
 <div id="maintable">
   <h1> Your Information</h1>
   <table>
@@ -79,12 +76,13 @@ body{
       </textarea>
   </td>
   </tr>
-  
   </table>
-    <input type="submit" onclick="my_function()" name="submit" value="Add Details" style="margin-top:20px;margin-bottom:20px;font-size:20px;margin-left:500px;text-align:center;padding:5px;border-radius:none;background:#F26419;color:#fff;">
+  <!-- <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+    <input type="checkbox" required name="checkbox" value="check" id="agree" style="margin-left:13rem;"/> I have read and agree to the Terms and Conditions and Privacy Policy -->
+    <button  type="submit" onclick="my_function()" href="remarksadopt.php" name="submit" value="Add Details" style="margin-top:20px;margin-bottom:20px;font-size:20px;margin-left:500px;text-align:center;padding:5px;border-radius:none;background:#F26419;color:#fff;">Add Detail</button>
+  <!-- </form> -->
 </div>
-
 </form>
-<?php require 'footer\footer.php' ?>
+<?php require 'footer\footer.php';?>
 </body>
 </html>

@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  
+  :root{
+      --red: #F26419;
+      --orange:#F6AE2D;
+      --dark-blue: #33658A;
+      --light-blue: #86BBD8;
+      --dark: #2F4858;
+  }
+  body{
+    font-family: montserrat;
+  }
+  nav{
+    background:url(../images/bg.jpg);
+    height: 80px;
+    width: 100%;
+  }
+  label.logo{
+    color: var(--red);
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+    font-size: 40px;
+    padding-left: 10%;
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    text-decoration: none;
+  }
+  nav ul li a{
+    color: var(--light-blue);
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  a.active,a:hover{
+    background: #1b9bff;
+    transition: .5s;
+    text-decoration: none;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+    nav ul li a{
+      font-size: 16px;
+    }
+  
+  @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+      text-decoration: none;
+    }
+    nav ul li a{
+     text-decoration: none;
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+}
+.card-header{
+    background-color: var(--red) ;
+}
+.card-header h3{
+    color:#fff;
+}
+.sendbutton .btn{
+    background-color: var(--red);
+    color: #fff;
+}

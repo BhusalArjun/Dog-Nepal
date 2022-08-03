@@ -74,10 +74,11 @@
       </label>
       <label class="logo">Dogs Nepal</label>
       <ul>
-        <li><a  href="../index.php">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="../index.php">Home</a></li>
+        <li><a class="active" href="#">Adopt Dog</a></li>
+        <li><a href="../lostdog/lostdog.php">Lost Dog</a></li>
+        <li><a href="../admin/aboutdog.php">About</a></li>
+        <li><a href="../adminentry/login.php">Admin-login</a></li>
       </ul>
     </nav>
             <div class="landing__content ">
@@ -108,18 +109,16 @@
                     <th>Dog Image1</th>
                     <th>Dog Image2</th>
                     <th>Dog Image3</th>
-                    <th>Dog Image4</th>
                     <th>Dog Name</th>
                     <th>Dog Breed</th>
                     <th>Dog Age</th>
                     <th>Dog Gender</th>
-                    <th>Dog Color</th>
-                    <th>Dog Size</th>
                     <th>Location</th>
                     <!-- <th>Owner Name</th>
                     <th>Owner Email</th>
                     <th>Owner Number</th> -->
                     <th>Desciption</th>
+                    <th>Status</th>
                     <th>Action</th>
                 </tr>
              </thead>
@@ -127,9 +126,9 @@
 
                     <?php
                         include "../config.php";
-                        $selectQuery = "SELECT * FROM adopt";
+                        $selectQuery = "SELECT * FROM adopt WHERE status = 'APPROVE'";
 
-                        $result = mysqli_query($conn, $selectQuery);  //
+                        $result = mysqli_query($conn, $selectQuery);  
 
                         if(mysqli_num_rows($result)){
                             $i = 1;
@@ -143,20 +142,18 @@
         <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row['dog_image1']?>"></td>
         <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row['dog_image2']?>"></td>
         <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row['dog_image3']?>"></td>
-        <td><img style="width:50%;height:auto;" src="../dogphotos/<?php echo $row ['dog_image4']?>"></td>
         <td><?php echo $row ['dog_name']?></td>
         <td><?php echo $row ['dog_breed']?></td>
         <td><?php echo $row ['dog_age']?></td>
         <td><?php echo $row ['dog_gender']?></td>
-        <td><?php echo $row ['dog_color']?></td>
-        <td><?php echo $row ['dog_size']?></td>
         <td><?php echo $row ['location']?></td>
         <!-- <td><?php echo $row ['owner_name']?></td>
         <td><?php echo $row ['owner_email']?></td>
         <td><?php echo $row ['owner-number']?></td> -->
         <td><?php echo $row ['describ']?></td>
+        <td><?php echo $row ['remarks']?></td>
         <td>
-            <button><a href="../Demo.php?id=<?php echo $id; ?>" style="background-color:#F26419; color:white;">Adopt</a></button>
+            <button><a href="../adoptform.php?id=<?php echo $id; ?>" style="background-color:#F26419; color:white;">Adopt</a></button>
            
         </td>
     </tr>
@@ -167,6 +164,6 @@
         ?>
     </tbody>
     </table>
-
+     <?php include '../footer/footer.php'?> 
   </body>
 </html>

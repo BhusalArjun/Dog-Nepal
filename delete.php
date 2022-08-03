@@ -1,7 +1,7 @@
 <?php include "./config.php";
 
 $id=$_GET['id'];
-$delQuery = "DELETE FROM adopt WHERE id=$id";
+$delQuery = "DELETE FROM wanttoadopt WHERE id=$id";
 if(mysqli_query($conn, $delQuery)){
     echo "<script>alert('successfully deleted');</script>";
 }
