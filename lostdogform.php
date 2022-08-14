@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
     $contactnumber=$_POST['contactnumber'];
     $location=$_POST['location'];
     $message=$_POST['message'];
- $sqlQuery="INSERT INTO `findlostdog` ( `id`,`name`, `email`, `contactnumber`, `location`, `message`)values('$id','$name','$email','$contactnumber','$location','$message')";
+ $sqlQuery="INSERT INTO `finderlostdog` ( `id`,`name`, `email`, `contactnumber`, `location`, `message`)values('$id','$name','$email','$contactnumber','$location','$message')";
 if(mysqli_query($conn,$sqlQuery)){
     echo"<script>alert('Stored pet details')</script>";
 }

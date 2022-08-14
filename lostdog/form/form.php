@@ -32,11 +32,12 @@ if(isset($_POST['submit'])){
     $dog_gender=$_POST['dog_gender'];
     $describ=$_POST['describ'];
     $location=$_POST['location'];
+    $reward=$_POST['reward'];
     $owner_name=$_POST['owner_name'];
     $owner_email=$_POST['owner_email'];
     $owner_number=$_POST['owner_number'];
 
-$sqlQuery="INSERT INTO `uploadlostdog`(`id`, `dog_image1`, `dog_image2`, `dog_image3`, `dog_name`, `dog_breed`, `dog_age`, `dog_gender`, `describ`, `location`, `owner_name`, `owner_email`, `owner_number`,`status`,`remarks`) VALUES ('','$dogimage1','$dogimage2','$dogimage3','$dog_name','$dog_breed','$dog_age','$dog_gender','$describ','$location','$owner_name','$owner_email','$owner_number','REQUEST','AVAILABLE')";
+$sqlQuery="INSERT INTO `lostdogowner`( `id`, `dog_image1`, `dog_image2`, `dog_image3`, `dog_name`, `dog_breed`, `dog_age`, `dog_gender`, `describ`, `location`, `reward`, `owner_name`, `owner_email`, `owner_number`,`status`,`remarks`) VALUES ('','$dogimage1','$dogimage2','$dogimage3','$dog_name','$dog_breed','$dog_age','$dog_gender','$describ','$location','$reward','$owner_name','$owner_email','$owner_number','REQUEST','AVAILABLE')";
 
 if(mysqli_query($conn,$sqlQuery)){
     echo"<script>alert('Stored pet details')</script>";
@@ -98,11 +99,15 @@ body{
   </tr>
   <tr>
   <td>Enter Dog Age  :</td>
-  <td><input type="text" name="dog_age" placeholder="Enter guessing age"></td>
+  <td><input type="number" name="dog_age" placeholder="Enter guessing age"></td>
   </tr>
   <tr>
   <td>Enter Dog Gender  :</td>
   <td><input type="text" name="dog_gender" placeholder="Enter gender of dog" required></td>
+  </tr>
+  <tr>
+  <td>Enter Reward  :</td>
+  <td><input type="text" name="reward" placeholder="Enter reward for dogfinder" required></td>
   </tr>
   <tr>
   <td>Other Information  :</td>

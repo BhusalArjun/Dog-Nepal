@@ -1,11 +1,10 @@
-<?php 
-include('../config.php');
+<?php include "../config.php";
 $id=$_GET['id'];
-$sql=mysqli_query($conn,"select * from wanttoadopt where id='$id' ");
-$res=mysqli_fetch_assoc($sql);
-if(mysqli_query($conn,"delete from adopt where id='$id' "))
-{
-header('location:adoptDash.php');	
+$delQuery = "DELETE FROM lostdogowner WHERE id=$id";
+if(mysqli_query($conn, $delQuery)){
+    echo "<script>alert('successfully deleted');</script>";
 }
-
-?>
+else{
+    echo "<script>alert('Unable to delete');</script>";
+}
+header("location: ../admin/uploadlostdogDash.php");?>

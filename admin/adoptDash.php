@@ -18,7 +18,7 @@
                 <li><a class="active" href="../admin/adoptDash.php">Adopt </a></li>
                 <li><a href="../gmailContact/index.php">Gmail Conatct</a></li>
                 <li><a href="../admin/uploadlostdogDash.php">Lost Dog</a></li>
-                <li><a href="../admin/findlostdogdash.php">Dog Finder</a></li>
+                <!-- <li><a href="../admin/findlostdogdash.php">Dog Finder</a></li> -->
                 <li><a href="../adminentry/login.php">Sign out</a></li>
             </ul>
         </nav>
@@ -43,7 +43,7 @@
 
     <?php
         include "../config.php";
-        $selectQuery = "SELECT * FROM wanttoadopt";
+        $selectQuery = "SELECT * FROM adopter";
 
         $result = mysqli_query($conn, $selectQuery);  
 

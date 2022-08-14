@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$password= md5($_POST['password']);
 	// $password = ($_POST['password']);
 
-    $sql = "SELECT * FROM adminsignin WHERE email = '$email' and password = '$password'";
+    $sql = "SELECT * FROM admin WHERE email = '$email' and password = '$password'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
 

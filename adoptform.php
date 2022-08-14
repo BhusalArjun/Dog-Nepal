@@ -1,7 +1,7 @@
-<?php
+<!-- <?php
 $id = $_GET['id'];
 session_start();
-?>
+?> -->
  <?php
 $conn = mysqli_connect("localhost","root","","dog") or die("connection_failed"); 
  //  include_once("\config.php");
@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
     $contactnumber=$_POST['contactnumber'];
     $location=$_POST['location'];
     $message=$_POST['message'];
- $sqlQuery="INSERT INTO `wanttoadopt` ( `id`,`name`, `email`, `contactnumber`, `location`, `message`)values('$id','$name','$email','$contactnumber','$location','$message')";
+ $sqlQuery="INSERT INTO `adopter` ( `id`,`name`, `email`, `contactnumber`, `location`, `message`)values('$id','$name','$email','$contactnumber','$location','$message')";
 if(mysqli_query($conn,$sqlQuery)){
     echo"<script>alert('Stored pet details')</script>";
 }
@@ -72,7 +72,7 @@ body{
   <tr>
   <td> Write the Message:</td>
   <td><textarea rows = "5" cols = "40" name = "message" >
-            Why you want to adopt..
+           
       </textarea>
   </td>
   </tr>

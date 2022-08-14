@@ -18,7 +18,7 @@
                 <li><a href="../admin/adoptDash.php">Adopt</a></li>
                 <li><a href="../gmailContact/index.php">Gmail Conatct</a></li>
                 <li><a class="active" href="../admin/uploadlostdogDash.php">Lost Dog</a></li>
-                <li><a href="../admin/findlostdogdash.php">Dog Finder</a></li>
+                <!-- <li><a href="../admin/findlostdogdash.php">Dog Finder</a></li> -->
                 <li><a href="../adminentry/login.php">Sign Out</a></li>
             </ul>
         </nav>
@@ -40,6 +40,7 @@
                     <th>Dog Age</th>
                     <th>Dog Gender</th>
                     <th>Location</th>
+                    <th>Reward</th>
                     <th>Owner Name</th>
                     <th>Owner Email</th>
                     <th>Owner Number</th>
@@ -52,7 +53,7 @@
 
     <?php
         include "../config.php";
-        $selectQuery = "SELECT * FROM uploadlostdog  WHERE status = 'REQUEST' OR status = 'APPROVE'";
+        $selectQuery = "SELECT * FROM lostdogowner WHERE status = 'REQUEST' OR status = 'APPROVE'";
 
         $result = mysqli_query($conn, $selectQuery);  //
 
@@ -75,6 +76,7 @@
         <td><?php echo $row ['dog_age']?></td>
         <td><?php echo $row ['dog_gender']?></td>
         <td><?php echo $row ['location']?></td>
+        <td><?php echo $row ['reward']?></td>
         <td><?php echo $row ['owner_name']?></td>
         <td><?php echo $row ['owner_email']?></td>
         <td><?php echo $row ['owner_number']?></td>
@@ -83,8 +85,7 @@
         <td>
             <button ><a href="../approvefindlostdog.php?id=<?php echo $row['id'] ?>" style="background-color:#F26419; color:white;">Approve</a></button>
             <br><br> <hr> <br>
-            <button><a style="background-color:#F26419; color:white;" href="../deleteadopt.php?id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this')">Delete</a></button><br><br> <hr> <br>
-            <div><button href = "../Product_details.php?data1=<?php echo $data1?>&data2=<?echo $data2?>" type="submit" name="Details" class="btn btn-default">Details</button></div>
+            <button><a style="background-color:#F26419; color:white;" href="../admin/delete.php?id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this')">Delete</a></button><br><br> <hr> <br>
         </td>
     </tr>
         <?php

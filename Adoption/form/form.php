@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){
     $owner_email=$_POST['owner_email'];
     $owner_number=$_POST['owner_number'];
 
-$sqlQuery="INSERT INTO `adopt`(`id`, `dog_image1`, `dog_image2`, `dog_image3`, `dog_name`, `dog_breed`, `dog_age`, `dog_gender`, `describ`, `location`, `owner_name`, `owner_email`, `owner_number`,`status`,`remarks`) VALUES ('','$dogimage1','$dogimage2','$dogimage3','$dog_name','$dog_breed','$dog_age','$dog_gender','$describ','$location','$owner_name','$owner_email','$owner_number','REQUEST','AVAILABLE')";
+$sqlQuery="INSERT INTO `donor`(`id`, `dog_image1`, `dog_image2`, `dog_image3`, `dog_name`, `dog_breed`, `dog_age`, `dog_gender`, `describ`, `location`, `owner_name`, `owner_email`, `owner_number`,`status`,`remarks`) VALUES ('','$dogimage1','$dogimage2','$dogimage3','$dog_name','$dog_breed','$dog_age','$dog_gender','$describ','$location','$owner_name','$owner_email','$owner_number','REQUEST','AVAILABLE')";
 
 if(mysqli_query($conn,$sqlQuery)){
     echo"<script>alert('Stored pet details')</script>";

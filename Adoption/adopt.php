@@ -126,7 +126,7 @@
 
                     <?php
                         include "../config.php";
-                        $selectQuery = "SELECT * FROM adopt WHERE status = 'APPROVE'";
+                        $selectQuery = "SELECT * FROM donor WHERE status = 'APPROVE'";
 
                         $result = mysqli_query($conn, $selectQuery);  
 
@@ -164,6 +164,6 @@
         ?>
     </tbody>
     </table>
-     <?php include '../footer/footer.php'?> 
+     <!-- <?php include '../footer/footer.php'?>  -->
   </body>
 </html>

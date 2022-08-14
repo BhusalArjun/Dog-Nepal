@@ -43,7 +43,7 @@
 
     <?php
         include "../config.php";
-        $selectQuery = "SELECT * FROM findlostdog";
+        $selectQuery = "SELECT * FROM finderlostdog";
 
         $result = mysqli_query($conn, $selectQuery);  //
 

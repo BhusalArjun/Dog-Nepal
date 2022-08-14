@@ -114,19 +114,20 @@
                     <th>Dog Age</th>
                     <th>Dog Gender</th>
                     <th>Location</th>
+                    <th>Reward</th>
                     <!-- <th>Owner Name</th>
                     <th>Owner Email</th>
                     <th>Owner Number</th> -->
                     <th>Desciption</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <!-- <th>Status</th>
+                    <th>Action</th> -->
                 </tr>
              </thead>
     </div>
 
                     <?php
                         include "../config.php";
-                        $selectQuery = "SELECT * FROM uploadlostdog WHERE status = 'APPROVE'";
+                        $selectQuery = "SELECT * FROM lostdogowner WHERE status = 'APPROVE'";
 
                         $result = mysqli_query($conn, $selectQuery);  
 
@@ -147,15 +148,16 @@
         <td><?php echo $row ['dog_age']?></td>
         <td><?php echo $row ['dog_gender']?></td>
         <td><?php echo $row ['location']?></td>
+        <td><?php echo $row ['reward']?></td>
         <!-- <td><?php echo $row ['owner_name']?></td>
         <td><?php echo $row ['owner_email']?></td>
         <td><?php echo $row ['owner-number']?></td> -->
         <td><?php echo $row ['describ']?></td>
-        <td><?php echo $row ['remarks']?></td>
+        <!-- <td><?php echo $row ['remarks']?></td>
         <td>
             <button><a href="../lostdogform.php?id=<?php echo $id; ?>" style="background-color:#F26419; color:white;">Finded</a></button>
            
-        </td>
+        </td> -->
     </tr>
         <?php
         $i++;

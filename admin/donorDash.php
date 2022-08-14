@@ -18,7 +18,7 @@
                 <li><a href="../admin/adoptDash.php">Adopt </a></li>
                 <li><a href="../gmailContact/index.php">Gmail Conatct</a></li>
                 <li><a href="../admin/uploadlostdogDash.php">Lost Dog</a></li>
-                <li><a href="../admin/findlostdogdash.php">Dog Finder</a></li>
+                <!-- <li><a href="../admin/findlostdogdash.php">Dog Finder</a></li> -->
                 <li><a href="../adminentry/login.php">Sign Out</a></li>
             </ul>
         </nav>
@@ -52,7 +52,7 @@
 
     <?php
         include "../config.php";
-        $selectQuery = "SELECT * FROM adopt WHERE status = 'REQUEST' OR status = 'APPROVE'";
+        $selectQuery = "SELECT * FROM donor WHERE status = 'REQUEST' OR status = 'APPROVE'";
 
         $result = mysqli_query($conn, $selectQuery);  //
 

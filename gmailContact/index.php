@@ -24,7 +24,7 @@
                 <li><a href="../admin/adoptDash.php">Adopt </a></li>
                 <li><a class="active" href="../gmailContact/index.php">Gmail Conatct</a></li>
                 <li><a href="../admin/uploadlostdogDash.php">Lost Dog</a></li>
-                <li><a href="../admin/findlostdogdash.php">Dog Finder</a></li>
+                <!-- <li><a href="../admin/findlostdogdash.php">Dog Finder</a></li> -->
                 <li><a href="../adminentry/login.php">Sign out</a></li>
             </ul>
     </nav>
@@ -48,7 +48,7 @@
                                     <div class="form-group row">
 										<label class="col-lg-3 col-form-label form-control-label">Subject</label>
 										<div class="col-lg-9">
-											<input class="form-control" type="text" value="" placeholder="Enter Subject" name="Subject" required>
+											<input class="form-control" type="text" value="" placeholder="Enter Subject" name="subject" required>
 										</div>
 									</div>
 									<div class="form-group row">
